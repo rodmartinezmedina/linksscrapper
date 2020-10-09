@@ -1,3 +1,4 @@
 *node_modules/*
+**node_modules
 # node_modules/puppeteer/.local-chromium/linux-800071/chrome-linux/chrome/node_modules/puppeteer/.local-chromium/linux-800071/chrome-linux/chrome/
 # node_modules/puppeteer/.local-chromium/linux-800071/chrome-linux/chrome
