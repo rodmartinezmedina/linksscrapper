@@ -7,10 +7,13 @@ app.get("/", (req, res) => {
   res.send("Hello froms server");
 });
 
-// app.get(`/api/webpagelinks`, async (req, res) => {
+app.post("/api/webpagelinks", (req, res) => {
+  console.log("request:", req.query);
+});
+
 // WORKING WITH PARAMS
 // app.get(`/api/webpagelinks/:inputUrl`, async (req, res) => {
-// with query
+// WITH QUERY
 app.get(`/api/webpagelinks`, async (req, res) => {
   // WORKING WITH PARAMS
   // const websiteUrl = req.params.inputUrl;
