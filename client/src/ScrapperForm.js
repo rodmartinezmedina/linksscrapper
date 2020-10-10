@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, Link } from "react";
 import axios from "axios";
 
 const ScrapperForm = () => {
@@ -60,17 +60,18 @@ const ScrapperForm = () => {
         "https://www.google.com/"
       </p>
       <>
-        <h3>Webpage: </h3>
+        <h3>Scanned Webpage: </h3>
         <h4>{currentWebUrl}</h4>
         {webLinks ? (
           <>
-            <h4>Links List</h4>
+            <h4>First 10 links</h4>
             <ul>
               {webLinks &&
                 webLinks.slice(0, 10).map((oneLink, index) => (
                   <li key={index}>
-                    {" "}
-                    <p>{oneLink}</p>
+                    <a href={oneLink} target="_blank" rel="noopener noreferrer">
+                      {oneLink}
+                    </a>
                   </li>
                 ))}
             </ul>
