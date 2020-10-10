@@ -22,6 +22,7 @@ app.get(`/api/webpagelinks`, async (req, res) => {
   const pageLinks = [];
   // WORKING WITH PARAMS
   // await page.goto(`https://${websiteUrl}`);
+
   // WITH QUERY
   await page.goto(`${websiteUrl}`);
 

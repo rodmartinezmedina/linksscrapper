@@ -7,13 +7,26 @@ app.get("/", (req, res) => {
   res.send("Hello froms server");
 });
 
-app.get("/websitelinks", async (req, res) => {
+// app.get(`/api/webpagelinks`, async (req, res) => {
+// WORKING WITH PARAMS
+// app.get(`/api/webpagelinks/:inputUrl`, async (req, res) => {
+// with query
+app.get(`/api/webpagelinks`, async (req, res) => {
+  // WORKING WITH PARAMS
+  // const websiteUrl = req.params.inputUrl;
+  // WITH QUERY
+  let websiteUrl = req.query.websiteUrl;
+
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const pageLinks = [];
+  // WORKING WITH PARAMS
+  // await page.goto(`https://${websiteUrl}`);
 
-  await page.goto("https://www.rodmartinezmedina.dev");
+  // WITH QUERY
+  await page.goto(`${websiteUrl}`);
 
+  // await page.goto(`https://www.rodmartinezmedina.dev`);
   // const searchedLinks = await page.$$eval("a", (link) => pageLinks.push(el.value));
   const searchedLinks = await page.$$eval("a", (link) =>
     link.map((a) => a.href)
@@ -26,7 +39,7 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-//USEFULL EXAMPLES
+//USEFULL DOCS EXAMPLES
 
 // const searchValFunc = async () => {
 //   const browser = await puppeteer.launch();
