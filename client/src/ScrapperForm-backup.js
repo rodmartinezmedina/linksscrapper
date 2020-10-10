@@ -85,12 +85,3 @@ const ScrapperForm = () => {
 };
 
 export default ScrapperForm;
-
-// //Get Links
-// const getLinks = async () => {
-//   try {
-//     const res = await axios.get("/api/webpagelinks");
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
